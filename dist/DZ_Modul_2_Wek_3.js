@@ -5,7 +5,6 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
-var _a, _b;
 /*
  const divPrintElements = document.querySelector('.printElements')
   if (divPrintElements) divPrintElements.innerHTML = wrapperElement.getHtml()
@@ -43,60 +42,57 @@ outputStringStatistics('1. Написать функцию, которая пр�
 // и возвращает его в текстовом виде.
 // Например: 35 – тридцать пять, 89 – восемьдесят девять,
 // 12 – двенадцать.
-var numberInWords;
-var counter = 0;
-var input1 = document.querySelector('#homework1 input');
-if (input1)
-    input1.value;
-var text1 = document.querySelector('#homework1 h3');
-var button1 = document.querySelectorAll('#homework1 button');
-var output1 = document.querySelector('#homework1 p');
-var onClick = function () {
-    // @ts-ignore
-    output1.innerText = '';
-    numberInWords = input1.value;
-    // do{
-    //   if (counter > 0) {
-    //     text1.innerHTML = '<h3 style= "color:red">Введите положительное двузначное число</h3>'
-    //     input1.innerText = ''
-    //   }
-    //   numberInWords = Number(numberInWords)
-    //   counter ++
-    // }while (10 > numberInWords || numberInWords > 99 ) 
-    // @ts-ignore
-    if (input1.value == 'Админ') {
-        // @ts-ignore
-        text1.innerHTML = 'Пароль?';
-        // @ts-ignore
-        input1.value = '';
-        button1[0].classList.add('hidden');
-        button1[1].classList.remove('hidden');
-    }
-    else {
-        // @ts-ignore
-        output1.innerText = 'Я вас не знаю';
-    }
-};
-(_a = button1[0]) === null || _a === void 0 ? void 0 : _a.addEventListener('click', onClick);
-(_b = button1[1]) === null || _b === void 0 ? void 0 : _b.addEventListener('click', function () {
-    // @ts-ignore
-    output1.innerText = '';
-    // @ts-ignore
-    if (input1.value == 'Я Главный') {
-        // @ts-ignore
-        output1.innerText = 'Здравствуйте!';
-    }
-    else {
-        // @ts-ignore
-        text1.innerText = 'Кто там?';
-        // @ts-ignore
-        output1.innerText = 'Я вас не знаю';
-        // @ts-ignore
-        input1.value = '';
-        button1[0].classList.remove('hidden');
-        button1[1].classList.add('hidden');
-    }
-});
+// let numberInWords 
+// let counter = 0 
+// const input1 = document.querySelector('#homework1 input') as HTMLInputElement
+// if (input1) input1.value
+// const text1 = document.querySelector('#homework1 h3') as HTMLElement
+// const button1 = document.querySelectorAll('#homework1 button') as Record<number,HTMLButtonElement>
+// const output1 = document.querySelector('#homework1 p') as HTMLParagraphElement
+// const onClick = function () {
+//   // @ts-ignore
+//   output1.innerText = ''
+//   numberInWords = input1.value
+//   // do{
+//   //   if (counter > 0) {
+//   //     text1.innerHTML = '<h3 style= "color:red">Введите положительное двузначное число</h3>'
+//   //     input1.innerText = ''
+//   //   }
+//   //   numberInWords = Number(numberInWords)
+//   //   counter ++
+//   // }while (10 > numberInWords || numberInWords > 99 ) 
+//   // @ts-ignore
+//   if (input1.value == 'Админ') {
+//     // @ts-ignore
+//     text1.innerHTML = 'Пароль?'
+//     // @ts-ignore
+//     input1.value = ''
+//     button1[0].classList.add('hidden')
+//     button1[1].classList.remove('hidden')
+//   } else {
+//     // @ts-ignore
+//     output1.innerText = 'Я вас не знаю'
+//   }
+// }
+// button1[0]?.addEventListener('click', onClick)
+// button1[1]?.addEventListener('click', function () {
+//   // @ts-ignore
+//   output1.innerText = ''
+//   // @ts-ignore
+//   if (input1.value == 'Я Главный') {
+//     // @ts-ignore
+//     output1.innerText = 'Здравствуйте!'
+//   } else {
+//     // @ts-ignore
+//     text1.innerText = 'Кто там?'
+//     // @ts-ignore
+//     output1.innerText = 'Я вас не знаю'
+//     // @ts-ignore
+//     input1.value = ''
+//     button1[0].classList.remove('hidden')
+//     button1[1].classList.add('hidden')
+//   }
+// })
 // do{
 //   numberInWords = prompt('Введите положительное двузначное число')
 //   numberInWords = Number(numberInWords)
@@ -114,7 +110,7 @@ function inWordsTheNumber(num) {
         return dozens[(+num[0])] + ' ' + digit[(+num[1])];
     }
 }
-console.log(inWordsTheNumber(numberInWords));
+console.log(inWordsTheNumber(35));
 /*
 3. Написать функцию, которая заменяет в полученной строке
 большие буквы на маленькие, маленькие – на большие, а
@@ -185,7 +181,7 @@ function convertToOneOine() {
     }
     return strings.join('');
 }
-console.log(convertToOneOine('Google', 'Opera', 'fsfs'));
+console.log(convertToOneOine('Написать функцию', 'переводит операнды в числа', '(+ - * /)'));
 /*
 7. Написать функцию – калькулятор. Функция принимает
 строку с примером, определяет, какое действие необходимо
