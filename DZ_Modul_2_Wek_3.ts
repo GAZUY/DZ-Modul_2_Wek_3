@@ -245,12 +245,27 @@ console.log(urlAdress('https://itstep.org/ua/about'))
 Выполняя задание, не используйте функцию split().
 */
 function dividingTheString (str: string,dividing) {
-  let arr='' 
-  let i 
+  let arr:string[]=[] 
+  let i = 0 
+  let a:string
+  let q
+  console.log ('10/08/2020/30/40')
   do{
-    arr=arr+(str.slice(i,str.indexOf(dividing,i)))
-    i = str.indexOf(dividing,i)
-  }while(str.indexOf(dividing,i) == -1)
+    // console.log (i)
+    // if (str.indexOf(dividing,i) == -1){
+    //   q = str.slice(i) 
+    //   console.log (a)
+    //   arr.push[a]
+    // }
+    a = str.slice(i,str.indexOf(dividing,i))
+    arr.push(a)
+    i = str.indexOf(dividing,i)+1
+    console.log (arr)
+    console.log (i)
+    console.log (a)
+  }while(str.indexOf(dividing,i) != -1)
+  a = str.slice(i) 
+  arr.push(a)
 
 
  return arr
@@ -281,3 +296,9 @@ console.log (dividingTheString ('10/08/2020/30/40','/'))
 Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
 8, 2020) должна вывести “Today is Monday 10.8.2020”.
 */
+function textConclusion(template, ...strings) {
+  [...strings].forEach((item, index) => template = template.replace('%' + (index + 1), item));
+  return template;
+}
+console.log(textConclusion('Today is %1 %2.%3.%4', 'Monday', 10, 8, 2020));
+console.log(textConclusion('Today is %1 %2.%3.%4', 'Monday', 10, 8, 2020));

@@ -1,3 +1,10 @@
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 var _a, _b;
 /*
  const divPrintElements = document.querySelector('.printElements')
@@ -222,12 +229,27 @@ console.log(urlAdress('https://itstep.org/ua/about'));
 Выполняя задание, не используйте функцию split().
 */
 function dividingTheString(str, dividing) {
-    var arr = '';
-    var i;
+    var arr = [];
+    var i = 0;
+    var a;
+    var q;
+    console.log('10/08/2020/30/40');
     do {
-        arr = arr + (str.slice(i, str.indexOf(dividing, i)));
-        i = str.indexOf(dividing, i);
-    } while (str.indexOf(dividing, i) == -1);
+        // console.log (i)
+        // if (str.indexOf(dividing,i) == -1){
+        //   q = str.slice(i) 
+        //   console.log (a)
+        //   arr.push[a]
+        // }
+        a = str.slice(i, str.indexOf(dividing, i));
+        arr.push(a);
+        i = str.indexOf(dividing, i) + 1;
+        console.log(arr);
+        console.log(i);
+        console.log(a);
+    } while (str.indexOf(dividing, i) != -1);
+    a = str.slice(i);
+    arr.push(a);
     return arr;
 }
 console.log(dividingTheString('10/08/2020/30/40', '/'));
@@ -254,4 +276,14 @@ console.log(dividingTheString('10/08/2020/30/40', '/'));
 входного параметра.
 Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
 8, 2020) должна вывести “Today is Monday 10.8.2020”.
-*/ 
+*/
+function textConclusion(template) {
+    var strings = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        strings[_i - 1] = arguments[_i];
+    }
+    __spreadArrays(strings).forEach(function (item, index) { return template = template.replace('%' + (index + 1), item); });
+    return template;
+}
+console.log(textConclusion('Today is %1 %2.%3.%4', 'Monday', 10, 8, 2020));
+console.log(textConclusion('Today is %1 %2.%3.%4', 'Monday', 10, 8, 2020));
